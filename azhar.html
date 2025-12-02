@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hairgrow® Minoxidil – The Power of Evidence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Hairgrow® (minoxidil topical solution) branding hub – interactive information about hereditary hair loss and Hairgrow 2% & 5%." />
+
+  <style>
+    :root {
+      --hg-green: #38a948;   /* Hairgrow 2% leaf tone */
+      --hg-teal:  #00a5c7;   /* Hairgrow 5% wave tone */
+      --hg-gold:  #c8993b;   /* pack gold ribbon */
+      --hg-deep:  #08352a;
+      --hg-soft:  #f3faf7;
+      --hg-soft-blue: #e4f5ff;
+      --hg-text:  #143334;
+      --radius-lg: 1.4rem;
+      --shadow-soft: 0 22px 40px rgba(0,0,0,0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   sans-serif;
+      background: #ffffff;
+      color: var(--hg-text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--hg-teal);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      width: min(1180px, 94vw);
+      margin: 0 auto;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 1.4rem;
+      background:
+        radial-gradient(circle at 40% 0%, #ffffff 0, #d5f3e4 40%, #8bd7a2 80%),
+        linear-gradient(140deg, var(--hg-green), var(--hg-teal));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 45% -40%;
+      background: linear-gradient(120deg, var(--hg-gold), #f4e3b9);
+      opacity: 0.8;
+      transform: rotate(-10deg);
+    }
+
+    .brand-text-main {
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.84rem;
+      color: var(--hg-teal);
+    }
+
+    .brand-text-sub {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      color: var(--hg-gold);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+    }
+
+    nav a {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      color: #234;
+      position: relative;
+      border: 1px solid transparent;
+      transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+    }
+
+    nav a:hover {
+      border-color: rgba(0,0,0,0.06);
+      background: #ffffff;
+    }
+
+    nav a.active {
+      background: linear-gradient(120deg, var(--hg-green), var(--hg-teal));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .page {
+      display: none;
+      min-height: calc(100vh - 70px);
+      padding: 3.6rem 0 3.4rem;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 94vw);
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--hg-deep);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw + 1.6rem, 3.4rem);
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 2.6vw + 1.3rem, 2.5rem);
+      margin-bottom: 0.4rem;
+    }
+
+    p + p {
+      margin-top: 0.5rem;
+    }
+
+    .accent-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      background: #f0fbf5;
+      color: var(--hg-green);
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .accent-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff, var(--hg-green));
+    }
+
+    .grid-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    /* Buttons */
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.3rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+                  background 0.16s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(130deg, var(--hg-green), var(--hg-teal));
+      color: #ffffff;
+      box-shadow: 0 18px 32px rgba(0,128,96,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 40px rgba(0,128,96,0.32);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      color: var(--hg-deep);
+    }
+
+    .btn-outline:hover {
+      box-shadow: 0 14px 26px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+
+    .eyebrow-note {
+      font-size: 0.8rem;
+      color: #5b7474;
+      margin-top: 0.8rem;
+    }
+
+    /* Hero visuals */
+
+    .hero-bg {
+      position: relative;
+      border-radius: 2rem;
+      padding: 1.6rem 1.6rem 0.2rem;
+      background:
+        linear-gradient(145deg, #f5fff8, #ebfbff 50%, #dbf5fe 80%),
+        radial-gradient(circle at -10% 10%, #c0f2dc 0, transparent 55%);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 40% -40% -45%;
+      background: radial-gradient(circle at 50% 0%, #ffffff 0, #c5f3da 40%, #94ddb6 70%);
+      opacity: 0.7;
+    }
+
+    .hero-pack-row {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1.2rem;
+      z-index: 1;
+      margin-top: 0.6rem;
+    }
+
+    .pack-card {
+      width: 45%;
+      max-width: 220px;
+      background: #ffffff;
+      border-radius: 1.3rem;
+      overflow: hidden;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.16);
+      transform-origin: center bottom;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pack-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pack-card--left { transform: translateY(12px) rotate(-7deg); }
+    .pack-card--right { transform: translateY(0) rotate(7deg); }
+
+    .pack-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 26px 46px rgba(0,0,0,0.22);
+    }
+
+    .hero-stats {
+      position: relative;
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.1rem 1rem;
+      border-radius: 1.2rem 1.2rem 0 0;
+      background: linear-gradient(120deg,
+        rgba(56,169,72,0.14),
+        rgba(0,165,199,0.12));
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.76rem;
+      color: #173935;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .hero-stat strong {
+      font-size: 0.94rem;
+    }
+
+    .hero-avatar-strip {
+      position: absolute;
+      inset: 1.1rem 1.2rem auto auto;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .avatar-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff,
+                rgba(0,0,0,0.12));
+      border: 2px solid #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-circle--man {
+      background:
+        radial-gradient(circle at 40% 15%, #ffffff, #fbe7d6),
+        linear-gradient(140deg, #263643, #090e11);
+    }
+
+    .avatar-circle--woman {
+      background:
+        radial-gradient(circle at 60% 15%, #ffffff, #ffe7f0),
+        linear-gradient(140deg, #2c3c52, #0b1321);
+    }
+
+    .avatar-circle--hairline {
+      background:
+        radial-gradient(circle at 50% 20%, #fbe7d6 0, #f0c5a2 30%, transparent 55%),
+        radial-gradient(circle at 50% 50%, #323f4f 0, #111821 60%);
+    }
+
+    /* Cards & tiles */
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      border: 1px solid rgba(0,0,0,0.05);
+      background: #ffffff;
+      color: var(--hg-teal);
+    }
+
+    .pill-label::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff, var(--hg-teal));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -50%;
+      background: radial-gradient(circle at 50% 0%, rgba(0,165,199,0.15) 0, transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.93rem;
+    }
+
+    .icon-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--hg-green), var(--hg-teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 0.45rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.6rem;
+    }
+
+    .mini-chip {
+      border-radius: 999px;
+      padding: 0.15rem 0.65rem;
+      background: #f3faf7;
+      font-size: 0.76rem;
+      color: #44605c;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    ul.clean-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    ul.clean-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.35rem 0.6rem;
+      align-items: flex-start;
+      margin-bottom: 0.35rem;
+    }
+
+    ul.clean-list span {
+      color: var(--hg-green);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    /* Timeline, slider */
+
+    .timeline-bar {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    .timeline-step {
+      border-radius: 0.9rem;
+      padding: 0.4rem 0.6rem;
+      background: #f5fbf8;
+      text-align: center;
+      border: 1px dashed rgba(0,0,0,0.05);
+    }
+
+    .timeline-step strong {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.15rem;
+      color: var(--hg-deep);
+    }
+
+    .slider-box {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem 1.1rem;
+      border-radius: 1.2rem;
+      background: linear-gradient(135deg, #f2fff8, #e3f4ff);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--hg-teal);
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #4e6668;
+      margin-top: 0.2rem;
+    }
+
+    .slider-output {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    /* Arabic */
+
+    .rtl {
+      direction: rtl;
+      text-align: right;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .rtl h3 {
+      margin-top: 0.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .rtl p {
+      font-size: 0.95rem;
+    }
+
+    /* FAQ & callout */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 1.7rem;
+    }
+
+    .callout {
+      background: #fff7f7;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(182,47,47,0.18);
+      padding: 1.2rem 1.4rem;
+      font-size: 0.9rem;
+      color: #6b2525;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    /* Footer */
+
+    footer {
+      background: #041410;
+      color: #d2f0e5;
+      padding: 2.1rem 0 1.6rem;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 1.6rem;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-logo span {
+      color: var(--hg-teal);
+    }
+
+    .footer-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.7rem;
+    }
+
+    .footer-badge {
+      border-radius: 999px;
+      padding: 0.18rem 0.7rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #bfe6d6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #bde1d5;
+    }
+
+    .footer-meta {
+      margin-top: 0.5rem;
+      color: #91bba9;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 920px) {
+      .grid-hero,
+      .grid-2,
+      .grid-3,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding-top: 3.1rem;
+      }
+
+      .hero-bg {
+        margin-top: 1.5rem;
+      }
+
+      nav ul {
+        position: absolute;
+        inset: 100% 0 auto;
+        width: min(1180px, 94vw);
+        margin: 0 auto;
+        flex-direction: column;
+        padding: 0.6rem 0 0.8rem;
+        background: rgba(255,255,255,0.98);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.18s ease, opacity 0.18s ease;
+      }
+
+      nav ul.open {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pack-card {
+        width: 48%;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div>
+        <div class="brand-text-main">Hairgrow<sup>®</sup> Minoxidil</div>
+        <div class="brand-text-sub">The Power of Evidence</div>
+      </div>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav aria-label="Main navigation">
+      <ul id="nav-list">
+        <li><a href="#" data-page="home" class="active">Home</a></li>
+        <li><a href="#" data-page="hairloss">Hair Loss 101</a></li>
+        <li><a href="#" data-page="hairgrow">Why Hairgrow</a></li>
+        <li><a href="#" data-page="usage">How to Use</a></li>
+        <li><a href="#" data-page="science">Evidence</a></li>
+        <li><a href="#" data-page="arabic">العربية</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE: HOME -->
+  <section class="page active" id="page-home">
+    <div class="container">
+      <div class="grid-hero">
+        <div>
+          <div class="accent-chip">Hereditary hair loss · Branding hub</div>
+          <h1>Let Hairgrow<sup>®</sup> tell the story of every strand</h1>
+          <p style="margin-top:0.7rem;">
+            Interactive journey through androgenetic alopecia, how minoxidil works,
+            and where Hairgrow 2&nbsp;% and 5&nbsp;% fit for men and women.
+          </p>
+
+          <div class="grid-3" style="margin-top:1.4rem;">
+            <div>
+              <div class="icon-badge">✓</div>
+              <h3 style="font-size:1rem;">Deeply branded</h3>
+              <p style="font-size:0.9rem;">
+                Visual identity inspired directly by Hairgrow packs – leaf, wave and
+                gold ribbon elements throughout the site.
+              </p>
+            </div>
+            <div>
+              <div class="icon-badge">⚗</div>
+              <h3 style="font-size:1rem;">Evidence-linked</h3>
+              <p style="font-size:0.9rem;">
+                Dedicated page summarising key minoxidil trials in AGA.
+              </p>
+            </div>
+            <div>
+              <div class="icon-badge">🧭</div>
+              <h3 style="font-size:1rem;">Guided journey</h3>
+              <p style="font-size:0.9rem;">
+                Each tab feels like a separate page – focused, scroll-free storytelling.
+              </p>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" data-jump="hairgrow">
+              Explore Hairgrow strengths →
+            </button>
+            <button class="btn btn-outline" data-jump="hairloss">
+              Start with Hair Loss 101
+            </button>
+          </div>
+
+          <p class="eyebrow-note">
+            Educational content for branding purposes – not a substitute for
+            medical advice. Always follow your local approved leaflet.
+          </p>
+        </div>
+
+        <div class="hero-bg" aria-label="Hairgrow packs and silhouettes">
+          <div class="hero-avatar-strip" aria-hidden="true">
+            <div class="avatar-circle avatar-circle--man"></div>
+            <div class="avatar-circle avatar-circle--hairline"></div>
+            <div class="avatar-circle avatar-circle--woman"></div>
+          </div>
+
+          <div class="hero-pack-row">
+            <figure class="pack-card pack-card--left">
+              <img src="hairgrow-2.png" alt="Hairgrow 2% Minoxidil pack" />
+            </figure>
+            <figure class="pack-card pack-card--right">
+              <img src="hairgrow-5.png" alt="Hairgrow 5% Minoxidil pack" />
+            </figure>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>Hairgrow 2&nbsp;%</strong>
+              <span>Regular strength – typically for women.</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Hairgrow 5&nbsp;%</strong>
+              <span>Extra strength – typically for men.</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Topical solution</strong>
+              <span>50&nbsp;ml HDPE bottle with spray pump.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.4rem;">
+        <div class="accent-chip">Choosing your Hairgrow</div>
+        <div class="grid-2">
+          <div class="card" style="background:linear-gradient(135deg,#f4fff6,#e5f7eb);">
+            <span class="pill-label">Hairgrow 2% · Leaf line</span>
+            <h3 style="margin-top:0.4rem;">Gentle companion for women</h3>
+            <ul class="clean-list">
+              <li><span>•</span> Designed for hereditary thinning in women 18–65.</li>
+              <li><span>•</span> General diffuse thinning, widening part-line.</li>
+              <li><span>•</span> Twice-daily routine as part of long-term care.</li>
+            </ul>
+            <div class="chip-row">
+              <div class="mini-chip">Green leaf palette</div>
+              <div class="mini-chip">Regular strength</div>
+            </div>
+          </div>
+          <div class="card" style="background:linear-gradient(135deg,#f3fbff,#e1f4ff);">
+            <span class="pill-label">Hairgrow 5% · Wave line</span>
+            <h3 style="margin-top:0.4rem;">Extra push for men</h3>
+            <ul class="clean-list">
+              <li><span>•</span> For male pattern hair loss at the vertex and crown.</li>
+              <li><span>•</span> Stronger concentration for suitable adult men.</li>
+              <li><span>•</span> Same 1&nbsp;ml twice-daily dosing.</li>
+            </ul>
+            <div class="chip-row">
+              <div class="mini-chip">Teal wave palette</div>
+              <div class="mini-chip">Extra strength</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: HAIR LOSS 101 -->
+  <section class="page" id="page-hairloss" style="background:radial-gradient(circle at 0 0,#daf5e3 0,transparent 55%), #ffffff;">
+    <div class="container">
+      <div class="accent-chip">Hair Loss 101</div>
+      <h2>What exactly is happening on the scalp?</h2>
+      <p>
+        This page gives the story of hereditary hair loss in pictures and tiles –
+        miniaturising follicles, hair cycle shifts and when to seek medical advice.
+      </p>
+
+      <div class="grid-3" style="margin-top:1.5rem;">
+        <div class="card">
+          <div class="icon-badge">🧬</div>
+          <h3>Androgenetic alopecia</h3>
+          <p>
+            Hair follicles that are genetically sensitive to androgens gradually
+            become smaller. Each growth cycle produces thinner, shorter hair until
+            some follicles stop producing visible hair.
+          </p>
+          <div class="chip-row">
+            <div class="mini-chip">Patterned thinning</div>
+            <div class="mini-chip">Family history</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">🔄</div>
+          <h3>Hair cycle shift</h3>
+          <p>
+            Normally, follicles rotate between growth (anagen), transition (catagen)
+            and rest (telogen). In hereditary loss, anagen becomes shorter and
+            telogen longer, leading to more shedding and less density.
+          </p>
+          <div class="chip-row">
+            <div class="mini-chip">Shorter growth phase</div>
+            <div class="mini-chip">More telogen hairs</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">⚠</div>
+          <h3>When to check with a doctor</h3>
+          <ul class="clean-list">
+            <li><span>•</span> Sudden or patchy hair loss.</li>
+            <li><span>•</span> Scalp redness, scaling or pain.</li>
+            <li><span>•</span> Hair loss after new medicine, illness or childbirth.</li>
+          </ul>
+          <p style="font-size:0.86rem;margin-top:0.5rem;">
+            These scenarios may indicate other conditions such as alopecia areata,
+            infections or endocrine problems and require full evaluation.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:2.1rem;">
+        <div class="card">
+          <span class="pill-label">Visualising the pattern</span>
+          <h3 style="margin-top:0.4rem;">Common male &amp; female patterns</h3>
+          <ul class="clean-list">
+            <li><span>♂</span> Receding frontal hairline + thinning at the vertex.</li>
+            <li><span>♀</span> Widening central part with preserved frontal fringe.</li>
+            <li><span>◎</span> Crown “see-through” as scalp becomes more visible.</li>
+          </ul>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">
+            Hairgrow is positioned for these hereditary, non-scarring patterns when
+            diagnosed by healthcare professionals.
+          </p>
+        </div>
+
+        <div class="card" style="background:linear-gradient(135deg,#f4fff6,#e8faf1);">
+          <span class="pill-label">Pack-based reminder</span>
+          <h3 style="margin-top:0.4rem;">Hairgrow packs as visual anchors</h3>
+          <p style="font-size:0.9rem;">
+            Reuse these packshots in your local materials to keep the pattern in
+            mind: green leaf for global thinning (2&nbsp;%), teal wave for crown
+            thinning (5&nbsp;%).
+          </p>
+          <div style="display:flex;gap:0.8rem;margin-top:0.7rem;align-items:flex-end;">
+            <figure style="flex:1;max-width:160px;">
+              <img src="hairgrow-2.png" alt="Hairgrow 2% pack on Hair Loss 101 page" />
+            </figure>
+            <figure style="flex:1;max-width:160px;">
+              <img src="hairgrow-5.png" alt="Hairgrow 5% pack on Hair Loss 101 page" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: WHY HAIRGROW -->
+  <section class="page" id="page-hairgrow" style="background:radial-gradient(circle at 100% 0,#d5f4ff 0,transparent 55%), #ffffff;">
+    <div class="container">
+      <div class="accent-chip">Why Hairgrow</div>
+      <h2>How Hairgrow works with your follicles</h2>
+      <p>
+        A dedicated visual page explaining the mechanism story and positioning of
+        Hairgrow 2&nbsp;% and 5&nbsp;% in simple tiles.
+      </p>
+
+      <div class="grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <span class="pill-label">Mechanism snapshot</span>
+          <h3 style="margin-top:0.4rem;">Three key actions on the scalp</h3>
+          <ul class="clean-list">
+            <li><span>1</span> Vasodilatory effect improving blood flow around follicles.</li>
+            <li><span>2</span> Prolongs anagen phase, allowing hairs to grow thicker and longer.</li>
+            <li><span>3</span> Increases follicle size in miniaturised hairs over time.</li>
+          </ul>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">
+            These actions support stabilisation of hereditary hair loss and regrowth
+            in a proportion of treated patients when used twice daily.
+          </p>
+        </div>
+
+        <div class="card" style="background:linear-gradient(135deg,#f4fff7,#e6fbff);">
+          <span class="pill-label">Visual follicle journey</span>
+          <h3 style="margin-top:0.4rem;">From miniaturised hair back to coverage</h3>
+          <div class="timeline-bar">
+            <div class="timeline-step">
+              <strong>Mini-hair</strong>
+              Thin, soft vellus-like hair.
+            </div>
+            <div class="timeline-step">
+              <strong>Early response</strong>
+              Slight thickening, less shedding.
+            </div>
+            <div class="timeline-step">
+              <strong>Visible change</strong>
+              Denser coverage in responders.
+            </div>
+            <div class="timeline-step">
+              <strong>Maintenance</strong>
+              Ongoing use to keep gains.
+            </div>
+          </div>
+          <p style="font-size:0.85rem;margin-top:0.6rem;">
+            Stopping Hairgrow usually leads to return to pre-treatment state over
+            several months.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:2.1rem;">
+        <div class="card">
+          <div class="icon-badge">📦</div>
+          <h3>Branded pack duo</h3>
+          <p style="font-size:0.92rem;">
+            Use the duo visual to emphasise that Hairgrow is a family of solutions
+            tailored to male and female pattern hair loss – same brand, two
+            strengths, harmonised design.
+          </p>
+          <div style="display:flex;gap:1rem;margin-top:0.8rem;align-items:flex-end;">
+            <figure style="flex:1;max-width:170px;">
+              <img src="hairgrow-2.png" alt="Hairgrow 2% pack visual" />
+            </figure>
+            <figure style="flex:1;max-width:170px;">
+              <img src="hairgrow-5.png" alt="Hairgrow 5% pack visual" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="pill-label">Positioning tiles</span>
+          <h3 style="margin-top:0.4rem;">Where Hairgrow fits in the journey</h3>
+          <div class="grid-3" style="margin-top:0.4rem;">
+            <div>
+              <div class="mini-chip">Early signs</div>
+              <p style="font-size:0.86rem;margin-top:0.3rem;">
+                Thinning but not bald. Dermatologist confirms AGA → Hairgrow can be
+                started early.
+              </p>
+            </div>
+            <div>
+              <div class="mini-chip">Established thinning</div>
+              <p style="font-size:0.86rem;margin-top:0.3rem;">
+                Still some coverage on top or crown. Hairgrow aims to increase hair
+                count and slow further loss.
+              </p>
+            </div>
+            <div>
+              <div class="mini-chip">Long-term control</div>
+              <p style="font-size:0.86rem;margin-top:0.3rem;">
+                Consistent twice-daily use underpins sustainable results in
+                responders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: USAGE -->
+  <section class="page" id="page-usage" style="background:radial-gradient(circle at 0 100%,#dff7ff 0,transparent 55%), #ffffff;">
+    <div class="container">
+      <div class="accent-chip">Application guide</div>
+      <h2>How to use Hairgrow like a daily ritual</h2>
+      <p>
+        Visual step-by-step instruction designed for patient education and
+        representative training.
+      </p>
+
+      <div class="grid-2" style="margin-top:1.6rem;">
+        <div class="card">
+          <span class="pill-label">Standard dosing</span>
+          <h3 style="margin-top:0.4rem;">1&nbsp;ml · Twice daily · Scalp only</h3>
+          <ul class="clean-list">
+            <li><span>1</span> Morning and evening, about 12 hours apart.</li>
+            <li><span>2</span> Total daily dose should not exceed 2&nbsp;ml.</li>
+            <li><span>3</span> Hair and scalp must be completely dry before use.</li>
+          </ul>
+
+          <div class="slider-box" style="margin-top:0.9rem;">
+            <label for="monthRange">
+              How expectations evolve over 12 months:
+            </label>
+            <input type="range" id="monthRange" min="0" max="12" value="3" />
+            <div class="slider-labels">
+              <span>Start</span>
+              <span>2 months</span>
+              <span>4–6 months</span>
+              <span>8–12 months</span>
+            </div>
+            <div class="slider-output" id="timelineOutput">
+              Early months: focus on correct application. Temporary increased
+              shedding can appear as older hairs are replaced.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="pill-label">6 visual steps</span>
+          <h3 style="margin-top:0.4rem;">From bottle to scalp</h3>
+          <ol style="margin-left:1rem;font-size:0.9rem;">
+            <li>Remove cap and check the spray-pump is firmly attached.</li>
+            <li>Part the hair to expose the thinning area.</li>
+            <li>Hold the bottle upright and spray once in the centre.</li>
+            <li>Use fingertips to spread the solution across the area.</li>
+            <li>Repeat for a total of 6 sprays to deliver 1&nbsp;ml.</li>
+            <li>Wash hands and allow the scalp to dry completely.</li>
+          </ol>
+          <p style="font-size:0.86rem;margin-top:0.6rem;">
+            Avoid inhaling the spray. Do not apply to other body areas, broken or
+            irritated skin.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:2.1rem;">
+        <div class="card">
+          <div class="icon-badge">✅</div>
+          <h3>Do’s</h3>
+          <ul class="clean-list">
+            <li><span>•</span> Use every day at the same times.</li>
+            <li><span>•</span> Comb and style hair only after the solution dries.</li>
+            <li><span>•</span> Keep the bottle tightly closed and stored below 30&nbsp;°C.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge" style="background:linear-gradient(135deg,#d64343,#f09a6a);">✕</div>
+          <h3>Don’ts</h3>
+          <ul class="clean-list">
+            <li><span>•</span> Do not exceed 2&nbsp;ml per day.</li>
+            <li><span>•</span> Do not use on sudden, unexplained or patchy hair loss.</li>
+            <li><span>•</span> Do not apply before using hair straighteners or open flames – solution is flammable until dry.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: SCIENCE -->
+  <section class="page" id="page-science" style="background:linear-gradient(135deg,#f5fff8,#e6f4ff);">
+    <div class="container">
+      <div class="accent-chip">Scientific evidence</div>
+      <h2>Key studies behind minoxidil topical solution</h2>
+      <p>
+        Curated tiles to visualise the strength of evidence – ideal for scientific
+        decks or digital detail-aid integration.
+      </p>
+
+      <div class="grid-3" style="margin-top:1.6rem;">
+        <div class="card">
+          <div class="icon-badge">📊</div>
+          <h3>Systematic review</h3>
+          <p style="font-size:0.9rem;">
+            Meta-analyses of clinical trials show that minoxidil solution increases
+            hair counts and global improvement scores versus placebo in both men and
+            women with androgenetic alopecia.
+          </p>
+          <div class="chip-row">
+            <div class="mini-chip">Placebo-controlled</div>
+            <div class="mini-chip">Increased hair counts</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">♀</div>
+          <h3>Women – 2% &amp; 5%</h3>
+          <p style="font-size:0.9rem;">
+            48-week studies demonstrate significant increases in non-vellus hair
+            count with 2&nbsp;% and 5&nbsp;% vs placebo, with earlier and stronger
+            effect at 5&nbsp;% but more local side-effects.
+          </p>
+          <div class="chip-row">
+            <div class="mini-chip">Improved coverage</div>
+            <div class="mini-chip">Dose–response signal</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon-badge">♂</div>
+          <h3>Men – vertex trials</h3>
+          <p style="font-size:0.9rem;">
+            In men aged 18–49 with vertex thinning, 5&nbsp;% solution showed greater
+            improvement in hair counts and global assessments than 2&nbsp;% and
+            placebo, with earlier onset of visible benefit.
+          </p>
+          <div class="chip-row">
+            <div class="mini-chip">Vertex focus</div>
+            <div class="mini-chip">5% superiority</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:2.1rem;">
+        <div class="card">
+          <span class="pill-label">Benefit profile</span>
+          <h3 style="margin-top:0.4rem;">What patients can realistically expect</h3>
+          <ul class="clean-list">
+            <li><span>•</span> Stabilisation of further loss in many users with early AGA.</li>
+            <li><span>•</span> Visible regrowth in a subset, typically after 4–6 months.</li>
+            <li><span>•</span> Need for continuous, long-term use to maintain gains.</li>
+          </ul>
+          <p style="font-size:0.85rem;margin-top:0.5rem;">
+            These points can be turned into simple visual infographics using the
+            Hairgrow color palette.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill-label">Pack as scientific icon</span>
+          <h3 style="margin-top:0.4rem;">Always bring the packs back in view</h3>
+          <p style="font-size:0.9rem;">
+            Even on scientific slides, placing a small Hairgrow duo visual ties data
+            directly to the brand in the audience’s mind.
+          </p>
+          <div style="display:flex;gap:0.9rem;margin-top:0.9rem;align-items:flex-end;">
+            <figure style="flex:1;max-width:155px;">
+              <img src="hairgrow-2.png" alt="Hairgrow 2% pack in evidence section" />
+            </figure>
+            <figure style="flex:1;max-width:155px;">
+              <img src="hairgrow-5.png" alt="Hairgrow 5% pack in evidence section" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: ARABIC -->
+  <section class="page" id="page-arabic" style="background:radial-gradient(circle at 0 0,#e2f9ff 0,transparent 55%), #ffffff;">
+    <div class="container">
+      <div class="accent-chip">المواد العربية</div>
+      <h2>هيرجرو – هوية عربية كاملة</h2>
+      <p>
+        Arabic copy and visuals based on your existing Hairgrow leaflets and posts.
+      </p>
+
+      <div class="grid-2" style="margin-top:1.6rem;">
+        <div class="rtl card">
+          <h3>الوصف المختصر:</h3>
+          <p>
+            <strong>هيرجرو</strong> هو محلول موضعي يحتوي على <strong>مينوكسيديل</strong>
+            يُستخدم لعلاج تساقط الشعر الوراثي (الصلع الأندروجيني) عن طريق المساعدة
+            على إبطاء تساقط الشعر وتشجيع إعادة نموه في فروة الرأس.
+          </p>
+
+          <h3>التركيزات المتوفرة:</h3>
+          <ul class="clean-list">
+            <li><span>٢٪</span> عادةً للنساء – تساقط منتشر في فروة الرأس.</li>
+            <li><span>٥٪</span> عادةً للرجال – تساقط في قمة الرأس ومقدمة فروة الرأس.</li>
+          </ul>
+
+          <h3>الاستخدام:</h3>
+          <p>
+            يُستعمل ١&nbsp;مل مرتين يوميًا على فروة الرأس الجافة فقط، مع ترك
+            المحلول ليجف تمامًا قبل النوم أو استخدام مستحضرات الشعر.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill-label">Arabic key-message visuals</span>
+          <h3 style="margin-top:0.4rem;">Ready-to-use branded posts</h3>
+          <p style="font-size:0.9rem;">
+            Use the following ready visuals in your social media, WhatsApp detailing
+            or printed materials. Replace the file names with the latest artwork as
+            needed.
+          </p>
+          <figure style="margin-top:0.7rem;">
+            <img src="hairgrow-ar-1.jpg" alt="Hairgrow Arabic poster – description" />
+          </figure>
+          <figure style="margin-top:0.7rem;">
+            <img src="hairgrow-ar-2.jpg" alt="Hairgrow Arabic poster – usage" />
+          </figure>
+          <figure style="margin-top:0.7rem;">
+            <img src="hairgrow-ar-3.jpg" alt="Hairgrow Arabic poster – storage and pack" />
+          </figure>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <div class="faq-grid">
+          <div class="card rtl">
+            <h3>أسئلة متكررة:</h3>
+            <p><strong>متى أرى النتائج؟</strong></p>
+            <p>
+              قد تبدأ النتائج المرئية بالظهور بعد ٢–٤ أشهر من الاستخدام المنتظم،
+              وقد يحتاج بعض المرضى إلى ٦ أشهر أو أكثر.
+            </p>
+            <p style="margin-top:0.6rem;"><strong>ماذا يحدث إذا أوقفت العلاج؟</strong></p>
+            <p>
+              يتوقع عادةً عودة تساقط الشعر إلى نمطه السابق خلال عدة أشهر مع فقدان
+              الشعر الذي نما خلال فترة العلاج.
+            </p>
+          </div>
+
+          <div class="callout">
+            <strong>تنبيه طبي</strong>
+            <p style="margin-top:0.5rem;">
+              هذه الصفحة لأغراض التوعية والعلامة التجارية، ولا تُغني عن استشارة
+              الطبيب أو الصيدلاني. يجب دائماً الرجوع إلى النشرة الداخلية المعتمدة
+              في بلدك ومناقشة أي أسئلة مع مختص الرعاية الصحية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo"><span>Hairgrow</span> · MINOXIDIL</div>
+      <p>
+        Hairgrow® Minoxidil topical solution 2&nbsp;% &amp; 5&nbsp;% for hereditary
+        hair loss. For adults 18–65 years. For external use on the scalp only.
+      </p>
+      <div class="footer-badges">
+        <div class="footer-badge">Leaf line 2%</div>
+        <div class="footer-badge">Wave line 5%</div>
+        <div class="footer-badge">The Power of Evidence</div>
+      </div>
+      <div class="footer-meta">
+        © <span id="yearSpan"></span> Hairgrow® · Branding concept page.
+      </div>
+    </div>
+    <div>
+      <p>
+        This website structure is designed for digital and internal use to
+        communicate Hairgrow identity, scientific background and correct usage.
+        Always adapt text and visuals to local regulatory requirements.
+      </p>
+      <div class="footer-links">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="science">Evidence</a>
+        <a href="#" data-page="usage">How to use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Helper: switch page
+  function setActivePage(pageId) {
+    document.querySelectorAll(".page").forEach((p) => {
+      p.classList.toggle("active", p.id === "page-" + pageId);
+    });
+
+    document.querySelectorAll('nav a[data-page]').forEach((link) => {
+      link.classList.toggle("active", link.dataset.page === pageId);
+    });
+
+    // Scroll to top of new "page"
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  // Nav clicks
+  const navList = document.getElementById("nav-list");
+  const navToggle = document.querySelector(".nav-toggle");
+
+  navList.addEventListener("click", (e) => {
+    const target = e.target.closest("a[data-page]");
+    if (!target) return;
+    e.preventDefault();
+    const page = target.dataset.page;
+    setActivePage(page);
+
+    if (navList.classList.contains("open")) {
+      navList.classList.remove("open");
+    }
+  });
+
+  // Buttons that jump between pages
+  document.querySelectorAll("[data-jump]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const page = btn.dataset.jump;
+      setActivePage(page);
+    });
+  });
+
+  // Mobile toggle
+  navToggle.addEventListener("click", () => {
+    navList.classList.toggle("open");
+  });
+
+  // Slider text
+  const monthRange = document.getElementById("monthRange");
+  const timelineOutput = document.getElementById("timelineOutput");
+
+  function updateTimelineText(value) {
+    const m = Number(value);
+    let text;
+
+    if (m <= 1) {
+      text =
+        "Weeks 0–8: focus on correct twice-daily application. Some users notice temporary increased shedding as older hairs are pushed out.";
+    } else if (m <= 3) {
+      text =
+        "Around 2–4 months: early signs such as reduced shedding and very fine new hairs in responders.";
+    } else if (m <= 7) {
+      text =
+        "Around 4–8 months: many responders see thicker, more visible regrowth and improved coverage.";
+    } else {
+      text =
+        "8–12 months: effect usually reaches its plateau. If there is no meaningful improvement by this time, treatment should be reassessed with a doctor.";
+    }
+
+    timelineOutput.textContent = text;
+  }
+
+  updateTimelineText(monthRange.value);
+  monthRange.addEventListener("input", (e) =>
+    updateTimelineText(e.target.value)
+  );
+
+  // Footer year
+  document.getElementById("yearSpan").textContent =
+    new Date().getFullYear();
+</script>
+</body>
+</html>
